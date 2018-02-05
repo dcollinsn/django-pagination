@@ -223,7 +223,7 @@ def paginate(context, window=DEFAULT_WINDOW, hashtag=''):
         if 'link_prefix' in context:
             to_return['link_prefix'] = context['link_prefix']
         return to_return
-    except KeyError, AttributeError:
+    except (KeyError, AttributeError):
         return {}
 
 register.inclusion_tag('pagination/pagination.html', takes_context=True)(
